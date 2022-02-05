@@ -5,10 +5,8 @@ function joystick () {
     	
     } else if (pins.analogReadPin(AnalogPin.P0) < 400) {
         radio.sendNumber(10)
-        basic.showString("-X")
     } else if (pins.analogReadPin(AnalogPin.P0) > 600) {
         radio.sendNumber(11)
-        basic.showString("+X")
     } else if (pins.analogReadPin(AnalogPin.P1) < 400) {
         basic.showString("-Y")
     } else if (pins.analogReadPin(AnalogPin.P1) > 600) {
@@ -42,4 +40,5 @@ function button () {
 }
 basic.forever(function () {
     button()
+    joystick()
 })
